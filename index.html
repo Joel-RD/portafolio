@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eudy Joel Reyes — Backend Developer</title>
+  <meta name="description" content="Portafolio de Eudy Joel Reyes, backend developer en Santo Domingo. APIs REST con Node.js, TypeScript, Express y PostgreSQL: seguridad, tests y documentación.">
+  <meta name="author" content="Eudy Joel Reyes">
+  <meta name="theme-color" content="#F4F1E8">
+  <meta name="color-scheme" content="light dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_DO">
+  <meta property="og:title" content="Eudy Joel Reyes — Backend Developer">
+  <meta property="og:description" content="APIs REST seguras, testeables y documentadas. Node.js · TypeScript · PostgreSQL. Santo Domingo, República Dominicana.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/132234600?v=4">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@JoelEudyRD">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/avatar.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Eudy Joel Reyes",
+    "alternateName": "Joel Reyes",
+    "jobTitle": "Backend Developer",
+    "description": "Backend developer enfocado en APIs REST con Node.js, TypeScript, Express y PostgreSQL.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santo Domingo",
+      "addressCountry": "DO"
+    },
+    "worksFor": { "@type": "Organization", "name": "GrupoRamos" },
+    "image": "https://avatars.githubusercontent.com/u/132234600?v=4",
+    "sameAs": [
+      "https://github.com/Joel-RD",
+      "https://www.linkedin.com/in/eudy-joel-reyes-b38534347/",
+      "https://x.com/JoelEudyRD"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="icon-arrow-up-right" viewBox="0 0 24 24">
+      <path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"/>
+    </symbol>
+    <symbol id="icon-arrow-down" viewBox="0 0 24 24">
+      <path d="M12 4v16m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.35.78 1.05.78 2.12v3.14c0 .3.21.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24">
+      <path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.82l4.71 6.23 5.46-6.23Zm-1.16 17.52h1.83L7.02 4.13H5.05l12.03 15.64Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.93 4.93l1.7 1.7M17.37 17.37l1.7 1.7M19.07 4.93l-1.7 1.7M6.63 17.37l-1.7 1.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24">
+      <path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="m5 5 14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/>
+    </symbol>
+    <symbol id="icon-terminal" viewBox="0 0 24 24">
+      <path d="m5 7 5 5-5 5M12 17h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/>
+    </symbol>
+    <symbol id="icon-database" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5.5" rx="7.5" ry="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M4.5 5.5v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-6M4.5 11.5v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 2.8 4.5 5.6v5.7c0 4.5 3.1 8.3 7.5 9.9 4.4-1.6 7.5-5.4 7.5-9.9V5.6L12 2.8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="m8.7 12 2.2 2.2 4.4-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-flask" viewBox="0 0 24 24">
+      <path d="M9 3h6M10 3v6.2L4.9 18a1.5 1.5 0 0 0 1.3 2.3h11.6a1.5 1.5 0 0 0 1.3-2.3L14 9.2V3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7.2 14.5h9.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="icon-stack" viewBox="0 0 24 24">
+      <path d="m12 3 9 4.5-9 4.5-9-4.5L12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="m3 12 9 4.5 9-4.5M3 16.5 12 21l9-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24">
+      <path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24">
+      <path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="m3.5 6 8.5 6.6L20.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="JR joel/rd — Eudy Joel Reyes, inicio">
+        <span class="brand__mark" aria-hidden="true">JR</span>
+        <span class="brand__text">joel<span class="brand__slash">/</span>rd</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#trabajo"><span class="nav__num" aria-hidden="true">01</span>Trabajo</a></li>
+          <li><a class="nav__link" href="#sobre-mi"><span class="nav__num" aria-hidden="true">02</span>Sobre mí</a></li>
+          <li><a class="nav__link" href="#stack"><span class="nav__num" aria-hidden="true">03</span>Stack</a></li>
+          <li><a class="nav__link" href="#contacto"><span class="nav__num" aria-hidden="true">04</span>Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar a tema oscuro" aria-pressed="false">
+          <svg class="theme-toggle__sun" aria-hidden="true"><use href="#icon-sun"/></svg>
+          <svg class="theme-toggle__moon" aria-hidden="true"><use href="#icon-moon"/></svg>
+        </button>
+        <a class="btn btn--small btn--solid header__cta" href="#contacto">Hablemos</a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="menu-toggle__open" aria-hidden="true"><use href="#icon-menu"/></svg>
+          <svg class="menu-toggle__close" aria-hidden="true"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Navegación móvil">
+        <ul class="mobile-menu__list">
+          <li><a href="#trabajo"><span>01</span>Trabajo</a></li>
+          <li><a href="#sobre-mi"><span>02</span>Sobre mí</a></li>
+          <li><a href="#stack"><span>03</span>Stack</a></li>
+          <li><a href="#contacto"><span>04</span>Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__foot">
+        <a href="https://github.com/Joel-RD" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/eudy-joel-reyes-b38534347/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/JoelEudyRD" target="_blank" rel="noopener noreferrer">X</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="kicker" data-reveal>
+            <span class="kicker__line" aria-hidden="true"></span>
+            Eudy Joel Reyes — Backend Developer
+          </p>
+
+          <h1 class="hero__title" id="hero-title" data-reveal data-delay="1">
+            <span class="hero__line">Backend</span>
+            <span class="hero__line hero__line--indent">developer<span class="hero__accent">.</span></span>
+          </h1>
+
+          <p class="hero__lede" data-reveal data-delay="2">
+            Construyo APIs REST seguras, testeables y fáciles de mantener.
+            Me obsesiona la parte que no se ve: validación, errores claros,
+            datos consistentes y documentación que cualquiera puede seguir.
+          </p>
+
+          <div class="hero__actions" data-reveal data-delay="3">
+            <a class="btn btn--solid" href="#trabajo">
+              Ver proyectos
+              <svg aria-hidden="true"><use href="#icon-arrow-down"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#contacto">
+              Hablemos
+              <svg aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+            </a>
+          </div>
+
+          <ul class="hero__meta" data-reveal data-delay="4">
+            <li>
+              <span class="status-dot" aria-hidden="true"></span>
+              Abierto a oportunidades
+            </li>
+            <li>
+              <svg aria-hidden="true"><use href="#icon-map"/></svg>
+              Santo Domingo, RD
+            </li>
+            <li>
+              <svg aria-hidden="true"><use href="#icon-terminal"/></svg>
+              Node.js + TypeScript
+            </li>
+          </ul>
+        </div>
+
+        <aside class="terminal" aria-hidden="true" data-reveal data-delay="2">
+          <div class="terminal__bar">
+            <div class="terminal__dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal__title">joel@backend: ~</span>
+            <span class="terminal__badge">zsh</span>
+          </div>
+
+          <div class="terminal__body">
+            <p class="terminal__line"><span class="terminal__prompt">$</span> <span class="terminal__cmd">whoami</span></p>
+            <p class="terminal__out">eudy_joel_reyes</p>
+
+            <p class="terminal__line"><span class="terminal__prompt">$</span> <span class="terminal__cmd">cat rol.txt</span></p>
+            <p class="terminal__out">backend jr @ GrupoRamos</p>
+            <p class="terminal__out terminal__out--dim">node · typescript · express · postgres</p>
+
+            <p class="terminal__line"><span class="terminal__prompt">$</span> <span class="terminal__cmd">curl -s api/status</span></p>
+            <p class="terminal__out"><span class="terminal__brace">{</span></p>
+            <p class="terminal__out terminal__out--indent">
+              <span class="terminal__key">"disponible"</span>: <span class="terminal__bool">true</span>,
+            </p>
+            <p class="terminal__out terminal__out--indent">
+              <span class="terminal__key">"base"</span>: <span class="terminal__str">"Santo Domingo, RD"</span>,
+            </p>
+            <p class="terminal__out terminal__out--indent">
+              <span class="terminal__key">"enfoque"</span>: <span class="terminal__str">"APIs REST"</span>
+            </p>
+            <p class="terminal__out"><span class="terminal__brace">}</span></p>
+
+            <p class="terminal__line"><span class="terminal__prompt">$</span> <span class="terminal__cmd">ls proyectos/</span></p>
+            <p class="terminal__out">erdl-shortener  library-api</p>
+            <p class="terminal__out">shameful-startups  linkedin-publisher</p>
+
+            <p class="terminal__line terminal__line--last">
+              <span class="terminal__prompt">$</span> <span class="terminal__cursor" aria-hidden="true"></span>
+            </p>
+          </div>
+
+          <div class="terminal__foot">
+            <span>UTF-8</span>
+            <span>main*</span>
+            <span>100%</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Node.js</span><span class="marquee__sep">/</span>
+        <span>TypeScript</span><span class="marquee__sep">/</span>
+        <span>Express</span><span class="marquee__sep">/</span>
+        <span>PostgreSQL</span><span class="marquee__sep">/</span>
+        <span>Redis</span><span class="marquee__sep">/</span>
+        <span>LibSQL · Turso</span><span class="marquee__sep">/</span>
+        <span>JWT</span><span class="marquee__sep">/</span>
+        <span>Jest</span><span class="marquee__sep">/</span>
+        <span>Swagger</span><span class="marquee__sep">/</span>
+        <span>n8n</span><span class="marquee__sep">/</span>
+        <span>Linux</span><span class="marquee__sep">/</span>
+        <span>Node.js</span><span class="marquee__sep">/</span>
+        <span>TypeScript</span><span class="marquee__sep">/</span>
+        <span>Express</span><span class="marquee__sep">/</span>
+        <span>PostgreSQL</span><span class="marquee__sep">/</span>
+        <span>Redis</span><span class="marquee__sep">/</span>
+        <span>LibSQL · Turso</span><span class="marquee__sep">/</span>
+        <span>JWT</span><span class="marquee__sep">/</span>
+        <span>Jest</span><span class="marquee__sep">/</span>
+        <span>Swagger</span><span class="marquee__sep">/</span>
+        <span>n8n</span><span class="marquee__sep">/</span>
+        <span>Linux</span><span class="marquee__sep">/</span>
+      </div>
+    </div>
+
+    <section class="section work" id="trabajo" aria-labelledby="work-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="section-head__index"><span>01</span> — Trabajo</p>
+          <div class="section-head__row">
+            <h2 class="section-head__title" id="work-title">Proyectos<br><em>seleccionados</em></h2>
+            <p class="section-head__note">
+              Cinco repositorios reales, no mockups. APIs, lógica de negocio
+              y automatización, con el código y la documentación abiertos.
+            </p>
+          </div>
+        </header>
+
+        <div class="projects">
+          <article class="project project--wide" data-reveal>
+            <div class="project__content">
+              <div class="project__top">
+                <span class="project__index">01</span>
+                <span class="project__tag">API · TypeScript</span>
+              </div>
+
+              <h3 class="project__title">
+                <a href="https://github.com/Joel-RD/erdl.my" target="_blank" rel="noopener noreferrer">ERDL URL Shortener</a>
+              </h3>
+
+              <p class="project__desc">
+                Acortador de URLs con autenticación en tres pasos: registro,
+                código de verificación por email y sesión JWT. Arquitectura por
+                capas, persistencia en LibSQL/Turso y protección anti-SSRF.
+              </p>
+
+              <ul class="project__points">
+                <li>Router → Controller → Service → Repository</li>
+                <li>Rate limiting, Helmet y bloqueo tras intentos fallidos</li>
+                <li>Tests unitarios y de estrés con Jest</li>
+              </ul>
+
+              <ul class="chips">
+                <li>TypeScript</li>
+                <li>Express 5</li>
+                <li>LibSQL</li>
+                <li>JWT</li>
+                <li>Jest</li>
+              </ul>
+
+              <div class="project__foot">
+                <span class="project__role">Backend · API REST</span>
+                <a class="project__link" href="https://github.com/Joel-RD/erdl.my" target="_blank" rel="noopener noreferrer">
+                  Ver repositorio
+                  <svg aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project__art" aria-hidden="true">
+              <svg viewBox="0 0 420 300" fill="none" focusable="false">
+                <defs>
+                  <pattern id="grid-erdl" width="30" height="30" patternUnits="userSpaceOnUse">
+                    <path d="M30 0H0v30" stroke="currentColor" stroke-opacity=".12"/>
+                  </pattern>
+                </defs>
+                <rect width="420" height="300" fill="url(#grid-erdl)"/>
+                <g class="art-ink">
+                  <rect x="30" y="36" width="132" height="54" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="44" y="60" class="art-label">POST /short</text>
+                  <text x="44" y="76" class="art-mono">cliente</text>
+                  <path d="M162 63h40" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="m196 58 6 5-6 5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="202" y="36" width="132" height="54" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="216" y="60" class="art-label">authJWT</text>
+                  <text x="216" y="76" class="art-mono">bearer token</text>
+                  <path d="M268 90v34" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="m263 118 5 6 5-6" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="202" y="126" width="132" height="54" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="216" y="150" class="art-label">nanoid(8)</text>
+                  <text x="216" y="166" class="art-mono">short id</text>
+                  <path d="M202 153h-40" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="m168 148-6 5 6 5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="30" y="126" width="132" height="54" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="44" y="150" class="art-label">302 redirect</text>
+                  <text x="44" y="166" class="art-mono">destino</text>
+                  <path d="M96 180v32" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="m91 206 5 6 5-6" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="30" y="212" width="304" height="54" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="44" y="236" class="art-label">LibSQL / Turso</text>
+                  <text x="44" y="252" class="art-mono">users · urls · verification_codes</text>
+                </g>
+                <g class="art-accent">
+                  <rect x="342" y="36" width="48" height="54" fill="currentColor"/>
+                  <text x="352" y="60" class="art-label art-label--accent">JWT</text>
+                  <text x="352" y="76" class="art-mono art-mono--accent">24h</text>
+                  <circle cx="366" cy="153" r="16" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="m359 153 5 5 10-10" stroke="currentColor" stroke-width="1.8"/>
+                  <text x="352" y="190" class="art-mono">anti-SSRF</text>
+                </g>
+              </svg>
+            </div>
+          </article>
+
+          <article class="project" data-reveal data-delay="1">
+            <div class="project__top">
+              <span class="project__index">02</span>
+              <span class="project__tag">Prueba técnica · API</span>
+            </div>
+
+            <h3 class="project__title">
+              <a href="https://github.com/Joel-RD/Prueba_tecnica_para_desarrolladores-de-backend-hackmd" target="_blank" rel="noopener noreferrer">Gestión de usuarios</a>
+            </h3>
+
+            <p class="project__desc">
+              CRUD completo sobre PostgreSQL con autenticación JWT en cookie
+              httpOnly, bcrypt y validación por capas. API pensada para que el
+              contrato y los errores sean predecibles.
+            </p>
+
+            <ul class="chips">
+              <li>TypeScript</li>
+              <li>Express 5</li>
+              <li>PostgreSQL</li>
+              <li>JWT</li>
+              <li>Jest</li>
+            </ul>
+
+            <div class="project__foot">
+              <span class="project__role">Backend · Auth</span>
+              <a class="project__link" href="https://github.com/Joel-RD/Prueba_tecnica_para_desarrolladores-de-backend-hackmd" target="_blank" rel="noopener noreferrer">
+                Ver repositorio
+                <svg aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+              </a>
+            </div>
+
+            <div class="project__art project__art--compact" aria-hidden="true">
+              <svg viewBox="0 0 360 190" fill="none" focusable="false">
+                <defs>
+                  <pattern id="grid-users" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M24 0H0v24" stroke="currentColor" stroke-opacity=".12"/>
+                  </pattern>
+                </defs>
+                <rect width="360" height="190" fill="url(#grid-users)"/>
+                <g class="art-ink">
+                  <rect x="24" y="24" width="196" height="44" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="46" cy="46" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M36 60c3-8 17-8 20 0" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="66" y="43" class="art-label">POST /login</text>
+                  <text x="66" y="58" class="art-mono">mobile_phone · password</text>
+                  <path d="M220 46h32" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="m246 41 6 5-6 5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="258" y="24" width="78" height="44" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="270" y="43" class="art-label">200 OK</text>
+                  <text x="270" y="58" class="art-mono">set-cookie</text>
+                  <rect x="24" y="96" width="148" height="44" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="38" y="116" class="art-label">users</text>
+                  <text x="38" y="131" class="art-mono">public schema</text>
+                  <path d="M172 118h30" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="m196 113 6 5-6 5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="208" y="96" width="128" height="44" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="222" y="116" class="art-label">bcrypt · 15</text>
+                  <text x="222" y="131" class="art-mono">hash / compare</text>
+                </g>
+                <g class="art-accent">
+                  <rect x="24" y="156" width="312" height="10" fill="currentColor"/>
+                  <text x="24" y="184" class="art-mono">JWT 24h · httpOnly · sameSite strict</text>
+                </g>
+              </svg>
+            </div>
+          </article>
+
+          <article class="project" data-reveal data-delay="2">
+            <div class="project__top">
+              <span class="project__index">03</span>
+              <span class="project__tag">API · Open source</span>
+            </div>
+
+            <h3 class="project__title">
+              <a href="https://github.com/Joel-RD/shameful-startups-api" target="_blank" rel="noopener noreferrer">Shameful Startups API</a>
+            </h3>
+
+            <p class="project__desc">
+              API REST satírica de startups vergonzosas. Paginación, búsqueda,
+              rankings, estadísticas y documentación Swagger. Un proyecto para
+              aprender APIs divirtiéndose con el ecosistema.
+            </p>
+
+            <ul class="chips">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>Swagger</li>
+              <li>REST</li>
+            </ul>
+
+            <div class="project__foot">
+              <span class="project__role">Backend · API REST</span>
+              <a class="project__link" href="https://github.com/Joel-RD/shameful-startups-api" target="_blank" rel="noopener noreferrer">
+                Ver repositorio
+                <svg aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+              </a>
+            </div>
+
+            <div class="project__art project__art--compact" aria-hidden="true">
+              <svg viewBox="0 0 360 190" fill="none" focusable="false">
+                <defs>
+                  <pattern id="grid-startups" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M24 0H0v24" stroke="currentColor" stroke-opacity=".12"/>
+                  </pattern>
+                </defs>
+                <rect width="360" height="190" fill="url(#grid-startups)"/>
+                <g class="art-ink">
+                  <text x="24" y="30" class="art-mono">shame_level</text>
+                  <path d="M24 144h312" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="34" y="112" width="34" height="32" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="84" y="98" width="34" height="46" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="134" y="122" width="34" height="22" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="184" y="88" width="34" height="56" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="234" y="116" width="34" height="28" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="284" y="102" width="34" height="42" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M24 62h312" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 4"/>
+                  <text x="24" y="56" class="art-mono">10</text>
+                </g>
+                <g class="art-accent">
+                  <rect x="34" y="112" width="34" height="32" fill="currentColor"/>
+                  <rect x="84" y="98" width="34" height="46" fill="currentColor"/>
+                  <rect x="184" y="88" width="34" height="56" fill="currentColor"/>
+                </g>
+                <g class="art-ink">
+                  <text x="24" y="174" class="art-label">GET /api/startups?industry=crypto</text>
+                  <rect x="280" y="20" width="56" height="18" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="287" y="33" class="art-mono">429</text>
+                </g>
+              </svg>
+            </div>
+          </article>
+        </div>
+
+        <div class="more-projects" data-reveal>
+          <div class="more-projects__head">
+            <h3>Más proyectos</h3>
+            <span>02 repositorios</span>
+          </div>
+
+          <ul class="project-list">
+            <li class="project-row">
+              <span class="project-row__index">04</span>
+              <div class="project-row__body">
+                <h4><a href="https://github.com/Joel-RD/Prueba_Backend-JR_Biblioteca-Prestamos-Libros" target="_blank" rel="noopener noreferrer">Sistema de biblioteca</a></h4>
+                <p>Préstamos de libros con reglas de negocio reales: límite de 3 por usuario, transacciones y validación con Zod.</p>
+              </div>
+              <ul class="chips chips--row">
+                <li>Node.js</li>
+                <li>PostgreSQL</li>
+                <li>Zod</li>
+              </ul>
+              <a class="project-row__link" href="https://github.com/Joel-RD/Prueba_Backend-JR_Biblioteca-Prestamos-Libros" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de Sistema de biblioteca">
+                <svg aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+              </a>
+            </li>
+
+            <li class="project-row">
+              <span class="project-row__index">05</span>
+              <div class="project-row__body">
+                <h4><a href="https://github.com/Joel-RD/Linkeding-posting-n8n" target="_blank" rel="noopener noreferrer">LinkedIn Publisher</a></h4>
+                <p>Workflow de n8n que convierte un link en un post: scraping, redacción con IA y aprobación humana por Telegram.</p>
+              </div>
+              <ul class="chips chips--row">
+                <li>n8n</li>
+                <li>Telegram</li>
+                <li>IA</li>
+              </ul>
+              <a class="project-row__link" href="https://github.com/Joel-RD/Linkeding-posting-n8n" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de LinkedIn Publisher">
+                <svg aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+              </a>
+            </li>
+          </ul>
+
+          <a class="more-projects__all" href="https://github.com/Joel-RD?tab=repositories" target="_blank" rel="noopener noreferrer">
+            Ver todos los repositorios en GitHub
+            <svg aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="sobre-mi" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="section-head__index"><span>02</span> — Sobre mí</p>
+          <div class="section-head__row">
+            <h2 class="section-head__title" id="about-title">El código<br><em>también se lee</em></h2>
+            <p class="section-head__note">
+              Un endpoint no termina cuando responde 200. Termina cuando otra
+              persona puede entenderlo, probarlo y cambiarlo sin miedo.
+            </p>
+          </div>
+        </header>
+
+        <div class="about__grid">
+          <figure class="about__media" data-reveal>
+            <div class="about__photo">
+              <img src="assets/img/avatar.jpg" alt="Retrato de Eudy Joel Reyes" width="460" height="460" loading="lazy">
+              <span class="about__photo-corner" aria-hidden="true"></span>
+            </div>
+            <figcaption class="about__caption">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>Backend JR @ GrupoRamos</span>
+              <span class="about__caption-sep" aria-hidden="true">/</span>
+              <span>Santo Domingo, RD</span>
+            </figcaption>
+          </figure>
+
+          <div class="about__copy" data-reveal data-delay="1">
+            <p class="about__lead">
+              Soy Eudy Joel Reyes, backend developer. Trabajo con
+              <strong>Node.js, TypeScript y PostgreSQL</strong> construyendo
+              APIs que priorizan la claridad sobre la improvisación.
+            </p>
+
+            <p>
+              Mi enfoque está en las decisiones que sostienen un sistema cuando
+              crece: contratos de API explícitos, validación en los bordes,
+              seguridad desde el diseño, tests que documentan el comportamiento
+              y una estructura por capas que no obliga a adivinar dónde vive
+              cada cosa.
+            </p>
+
+            <p>
+              Fuera del trabajo mantengo proyectos propios y pruebas técnicas
+              para seguir practicando: desde un acortador de URLs con
+              autenticación completa hasta automatizaciones con IA. Me gusta
+              entender el problema antes de escribir la primera línea.
+            </p>
+
+            <ul class="facts">
+              <li>
+                <span class="facts__label">Rol</span>
+                <span class="facts__value">Backend Developer JR</span>
+              </li>
+              <li>
+                <span class="facts__label">Empresa</span>
+                <span class="facts__value">GrupoRamos</span>
+              </li>
+              <li>
+                <span class="facts__label">Base</span>
+                <span class="facts__value">Santo Domingo, RD</span>
+              </li>
+              <li>
+                <span class="facts__label">Disponibilidad</span>
+                <span class="facts__value facts__value--accent">Abierto a oportunidades</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="principles">
+          <article class="principle" data-reveal>
+            <div class="principle__icon" aria-hidden="true">
+              <svg><use href="#icon-terminal"/></svg>
+            </div>
+            <span class="principle__num">01</span>
+            <h3>Primero el contrato</h3>
+            <p>Endpoints, códigos de estado y forma de los errores definidos antes de implementar. Menos sorpresas para quien consume la API.</p>
+          </article>
+
+          <article class="principle" data-reveal data-delay="1">
+            <div class="principle__icon" aria-hidden="true">
+              <svg><use href="#icon-shield"/></svg>
+            </div>
+            <span class="principle__num">02</span>
+            <h3>Seguridad por defecto</h3>
+            <p>Validación en los bordes, contraseñas con bcrypt, tokens con expiración y límites de intentos. No como parche, como base.</p>
+          </article>
+
+          <article class="principle" data-reveal data-delay="2">
+            <div class="principle__icon" aria-hidden="true">
+              <svg><use href="#icon-flask"/></svg>
+            </div>
+            <span class="principle__num">03</span>
+            <h3>Tests que explican</h3>
+            <p>Una suite útil no solo protege: documenta el comportamiento esperado y hace visible lo que el README a veces olvida.</p>
+          </article>
+        </div>
+
+        <div class="timeline" data-reveal>
+          <div class="timeline__head">
+            <h3>Trayectoria</h3>
+            <span>Actualidad</span>
+          </div>
+
+          <ol class="timeline__list">
+            <li class="timeline__item">
+              <div class="timeline__when">
+                <span class="timeline__dot" aria-hidden="true"></span>
+                <span>Actualidad</span>
+              </div>
+              <div class="timeline__body">
+                <h4>Backend JR <span>· GrupoRamos</span></h4>
+                <p>Desarrollo backend con Node.js y TypeScript, con foco en APIs REST y calidad del código.</p>
+              </div>
+            </li>
+
+            <li class="timeline__item">
+              <div class="timeline__when">
+                <span class="timeline__dot" aria-hidden="true"></span>
+                <span>2025 — 2026</span>
+              </div>
+              <div class="timeline__body">
+                <h4>Proyectos personales y pruebas técnicas</h4>
+                <p>APIs con autenticación, lógica de negocio, testing y automatización. Todo el código está publicado en GitHub.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stack" id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="section-head__index"><span>03</span> — Stack</p>
+          <div class="section-head__row">
+            <h2 class="section-head__title" id="stack-title">Herramientas<br><em>del oficio</em></h2>
+            <p class="section-head__note">
+              Tecnologías que he usado en proyectos reales y pruebas técnicas.
+              Sin logos decorativos: solo lo que puedo defender en una conversación.
+            </p>
+          </div>
+        </header>
+
+        <div class="stack__grid">
+          <article class="stack-card" data-reveal>
+            <div class="stack-card__head">
+              <span class="stack-card__icon" aria-hidden="true"><svg><use href="#icon-terminal"/></svg></span>
+              <h3>Backend</h3>
+              <span class="stack-card__num">01</span>
+            </div>
+            <ul class="stack-list">
+              <li>Node.js</li>
+              <li>TypeScript</li>
+              <li>Express 5</li>
+              <li>APIs REST</li>
+              <li>Socket.io</li>
+            </ul>
+          </article>
+
+          <article class="stack-card" data-reveal data-delay="1">
+            <div class="stack-card__head">
+              <span class="stack-card__icon" aria-hidden="true"><svg><use href="#icon-database"/></svg></span>
+              <h3>Datos</h3>
+              <span class="stack-card__num">02</span>
+            </div>
+            <ul class="stack-list">
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>SQLite</li>
+              <li>LibSQL · Turso</li>
+              <li>SQL parametrizado</li>
+            </ul>
+          </article>
+
+          <article class="stack-card" data-reveal data-delay="2">
+            <div class="stack-card__head">
+              <span class="stack-card__icon" aria-hidden="true"><svg><use href="#icon-flask"/></svg></span>
+              <h3>Testing y calidad</h3>
+              <span class="stack-card__num">03</span>
+            </div>
+            <ul class="stack-list">
+              <li>Jest</li>
+              <li>Supertest</li>
+              <li>Autocannon</li>
+              <li>Zod</li>
+              <li>Swagger / OpenAPI</li>
+            </ul>
+          </article>
+
+          <article class="stack-card" data-reveal data-delay="3">
+            <div class="stack-card__head">
+              <span class="stack-card__icon" aria-hidden="true"><svg><use href="#icon-shield"/></svg></span>
+              <h3>Seguridad</h3>
+              <span class="stack-card__num">04</span>
+            </div>
+            <ul class="stack-list">
+              <li>JWT</li>
+              <li>bcrypt</li>
+              <li>Helmet</li>
+              <li>Rate limiting</li>
+              <li>Validación de entrada</li>
+            </ul>
+          </article>
+
+          <article class="stack-card" data-reveal data-delay="4">
+            <div class="stack-card__head">
+              <span class="stack-card__icon" aria-hidden="true"><svg><use href="#icon-spark"/></svg></span>
+              <h3>Automatización e IA</h3>
+              <span class="stack-card__num">05</span>
+            </div>
+            <ul class="stack-list">
+              <li>n8n</li>
+              <li>Firecrawl</li>
+              <li>OpenAI</li>
+              <li>Telegram Bot API</li>
+              <li>GitHub Copilot</li>
+            </ul>
+          </article>
+
+          <article class="stack-card" data-reveal data-delay="5">
+            <div class="stack-card__head">
+              <span class="stack-card__icon" aria-hidden="true"><svg><use href="#icon-stack"/></svg></span>
+              <h3>Entorno</h3>
+              <span class="stack-card__num">06</span>
+            </div>
+            <ul class="stack-list">
+              <li>Git</li>
+              <li>Linux</li>
+              <li>Render</li>
+              <li>Netlify</li>
+              <li>Postman</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__head" data-reveal>
+          <p class="section-head__index"><span>04</span> — Contacto</p>
+          <h2 class="contact__title" id="contact-title">
+            ¿Construimos<br>
+            <span class="contact__title-accent">algo que aguante?</span>
+          </h2>
+          <p class="contact__lede">
+            Estoy abierto a oportunidades como backend developer.
+            Si tienes un proyecto, una vacante o una idea que necesita una API
+            bien pensada, escríbeme.
+          </p>
+        </div>
+
+        <div class="contact__grid">
+          <a class="contact-link contact-link--primary" href="https://www.linkedin.com/in/eudy-joel-reyes-b38534347/" target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="contact-link__icon" aria-hidden="true"><svg><use href="#icon-linkedin"/></svg></span>
+            <span class="contact-link__body">
+              <span class="contact-link__label">Escríbeme por LinkedIn</span>
+              <span class="contact-link__value">/in/eudy-joel-reyes</span>
+            </span>
+            <svg class="contact-link__arrow" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+          </a>
+
+          <a class="contact-link" href="https://github.com/Joel-RD" target="_blank" rel="noopener noreferrer" data-reveal data-delay="1">
+            <span class="contact-link__icon" aria-hidden="true"><svg><use href="#icon-github"/></svg></span>
+            <span class="contact-link__body">
+              <span class="contact-link__label">Código y proyectos</span>
+              <span class="contact-link__value">github.com/Joel-RD</span>
+            </span>
+            <svg class="contact-link__arrow" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+          </a>
+
+          <a class="contact-link" href="https://x.com/JoelEudyRD" target="_blank" rel="noopener noreferrer" data-reveal data-delay="2">
+            <span class="contact-link__icon" aria-hidden="true"><svg><use href="#icon-x"/></svg></span>
+            <span class="contact-link__body">
+              <span class="contact-link__label">Conversación técnica</span>
+              <span class="contact-link__value">@JoelEudyRD</span>
+            </span>
+            <svg class="contact-link__arrow" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+          </a>
+        </div>
+
+        <p class="contact__note" data-reveal>
+          <span class="status-dot" aria-hidden="true"></span>
+          Respondo más rápido por LinkedIn. Zona horaria: AST (UTC−4).
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <a class="brand brand--footer" href="#top" aria-label="JR joel/rd — Volver al inicio">
+          <span class="brand__mark" aria-hidden="true">JR</span>
+          <span class="brand__text">joel<span class="brand__slash">/</span>rd</span>
+        </a>
+
+        <nav class="footer__nav" aria-label="Navegación del pie de página">
+          <a href="#trabajo">Trabajo</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#stack">Stack</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="footer__social">
+          <a href="https://github.com/Joel-RD" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Joel-RD"><svg aria-hidden="true"><use href="#icon-github"/></svg></a>
+          <a href="https://www.linkedin.com/in/eudy-joel-reyes-b38534347/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Eudy Joel Reyes"><svg aria-hidden="true"><use href="#icon-linkedin"/></svg></a>
+          <a href="https://x.com/JoelEudyRD" target="_blank" rel="noopener noreferrer" aria-label="X de JoelEudyRD"><svg aria-hidden="true"><use href="#icon-x"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer__wordmark" aria-hidden="true">JOEL REYES</div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> Eudy Joel Reyes. Diseñado y construido con intención.</p>
+        <p>Hecho en Santo Domingo, RD — TypeScript y café.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
